@@ -1,1 +1,11 @@
-# mememagicdesign
+## 💡 About
+
+This is an ongoing individual project for the class "Software Development Methods" during the Spring Semester of 2021 at University.
+
+![Java](https://img.shields.io/badge/-Java-blue)
+
+## :clipboard: Project Information
+### Task
+- Spring 2021 Meme Magic Design
+The year is 2006 and Google has just bought YouTube. As a budding tech entrepreneur, you've had a great idea for a killer new app that allows you to take a photo, apply a funny caption and share it with your friends. You call it a “meme.”
+To get started with your app, you're going to need to design some classes. You sit down with your design team and get to work.
