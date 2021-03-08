@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class User {
-  // STATES (Variables
+    // STATES (Variables
 
     /**
      * Holds the username
@@ -103,7 +103,7 @@ public class User {
      */
     @Override
     public boolean equals(Object obj) {
-        return true;
+        return super.equals(obj);
     }
 
     // GETTERS and SETTERS
@@ -162,4 +162,4 @@ public class User {
         this.memesViewed = memeList;
     }
     
-} //END class
+} // END class

@@ -1,5 +1,5 @@
 public class BackgroundImage {
-  //STATES (Instance variables)
+    //STATES (Instance variables)
     /**
      * Holds the name of the image
      * */
@@ -16,8 +16,16 @@ public class BackgroundImage {
     private String description;
     
     //Constructors
+    public BackgroundImage(String imageFileName, String title, String description) {
+        this.imageFileName = imageFileName;
+        this.title = title;
+        this.description = description;
+    }
+    
     public BackgroundImage() {
-        
+        this.imageFileName = "No image name given";
+        this.title = "No title given";
+        this.description = "No description given";
     }
     
     //BEHAVIOR (Methods)
@@ -28,7 +36,7 @@ public class BackgroundImage {
      */
     @Override
     public String toString() {
-        return "";
+        return this.title + " <" + this.description + ">";
     }
     
     /**
@@ -38,8 +46,23 @@ public class BackgroundImage {
      * @return boolean if the two objects are the same
      */
     @Override
-    public boolean equals(Object obj) {
-        return true;
+    public boolean equals(Object otherObj) {
+        //Checks if the onject is empty
+        if(otherObj == null) return false;
+        
+        //Checks if the object is the same object type
+        if(!(otherObj instanceof BackgroundImage)) return false;
+        
+        BackgroundImage other = (BackgroundImage) otherObj;
+        
+        //Checks the parameters
+        if((this.imageFileName).equals(other.imageFileName) && 
+           (this.title).equals(other.title) && 
+           (this.description).equals(other.description)) {
+            return true;
+        }
+        
+        return false;
     }
     
     //GETTERS and SETTERS
@@ -97,4 +120,26 @@ public class BackgroundImage {
         this.description = description;
     }
     
-}
+    public static void main(String[] args) {
+        //TESTING
+        
+        //Creating BackgroundImage objects
+        BackgroundImage kitten = new BackgroundImage("kitten.png", "Sleeping kitten", "Image of a kitten sleeping on their little bed");
+        BackgroundImage puppy = new BackgroundImage();
+        puppy.setDescription("Image of a puppy sleeping on their little bed");
+        puppy.setTitle("Sleeping puppy");
+        puppy.setImageFileName("puppy.png");
+        BackgroundImage brownKitten = new BackgroundImage("kitten.png", "Sleeping kitten", "Image of a kitten sleeping on their little bed");
+        
+        //Printing
+        System.out.println(puppy.toString());
+        System.out.println(kitten.toString());
+        System.out.println(brownKitten.toString());
+        System.out.println("Does kitten equal puppy: " + kitten.equals(puppy));
+        System.out.println("Does kitten equal brown kitten: " + kitten.equals(brownKitten));
+        System.out.println("Does puppy equal brown kitten: " + puppy.equals(brownKitten));
+
+        
+    } //END MAIN
+    
+} // END class
