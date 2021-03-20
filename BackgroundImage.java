@@ -1,3 +1,4 @@
+
 public class BackgroundImage {
     //STATES (Instance variables)
     /**
@@ -139,7 +140,6 @@ public class BackgroundImage {
         System.out.println("Does kitten equal brown kitten: " + kitten.equals(brownKitten));
         System.out.println("Does puppy equal brown kitten: " + puppy.equals(brownKitten));
 
-        
     } //END MAIN
     
 } // END class

@@ -1,3 +1,4 @@
+
 public class Rating {
     //STATES (Instance variables)
       /**
@@ -13,18 +14,28 @@ public class Rating {
       //Constructors
       public Rating(User user, int score) {
           this.user = user;
-          
-          //Allowed values and sets them
-          if(score == 1 || score == 0 || score == -1) {
-              this.score = score;
-          } else {
-              this.score = 0;
-          }
+          this.score = validateScore(score);
       }
       
       public Rating() {
           this.user = new User();
           this.score = 0;
+      }
+      
+      //Helper Methods
+      /**
+       * Validates if the score passed is inclusive within -1 to 1 range
+       * 
+       * @param int the score it is checking
+       * @return int returns the score if within the range if not defaults to 0
+       */
+      private int validateScore(int score) {
+        //Allowed values and returns them
+          if(score == 1 || score == 0 || score == -1) {
+              return score;
+          } else {
+              return 0;
+          }
       }
       
       //BEHAVIOR (Methods)
@@ -35,9 +46,9 @@ public class Rating {
        */
       @Override
       public String toString() {
-          if(this.score == -1) return "Rating was a downvote";
-          if(this.score == 0) return "Rating was a pass";
-          if(this.score == 1) return "Rating was an upvote";
+          if(this.score == -1) return this.user.getUserName() + " rated as a downvote";
+          if(this.score == 0) return this.user.getUserName() + " rated as a pass";
+          if(this.score == 1) return this.user.getUserName() + " rated as an upvote";
           return null;
       }
       
@@ -78,6 +89,7 @@ public class Rating {
        * Sets the score to rating Object
        * 
        * @param int a number to set on the object
+       * @return boolean if setting the score was successful or not
        * */
       public boolean setScore(int score) {
           //Allowed values for score and sets it to that value
@@ -109,27 +121,28 @@ public class Rating {
       
       public static void main(String[] args) {
           //Testing
+          
           //Creating User objects
-          User bob = new User();
-          User johnTho = new User();
-          User emma123 = new User();
+          User bob = new User("bob");
+          User johnTho = new User("johnTho");
+          User emma123 = new User("emma123");
           
           //Creating Rating objects
           Rating r1 = new Rating(bob, 4); // Not allowed
           Rating r2 = new Rating(johnTho, 1); //Allowed
-          Rating r3 = new Rating(); 
-          r3.setScore(-1000); //Setting to a non allowed value
-          r3.setUser(emma123);
+          Rating r3 = new Rating(emma123, -1000); //not allowed value
           Rating r4 = new Rating(bob, 4);
           
           //Printing to strings and equals 
           System.out.println(r1.toString());
           System.out.println(r2.toString());
           System.out.println(r3.toString());
-          
+          System.out.println("-------------------------------------------");
           System.out.println(r1.equals(r4));
           System.out.println(r2.equals(r3));
+          System.out.println("-------------------------------------------");
+          System.out.println(r1.getUser().getUserName());
           
-      } //END MAIN
+      } //END MAIN 
       
   } //END Class
