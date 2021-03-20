@@ -14,4 +14,6 @@ To get started with your app, you're going to need to design some classes. You s
 #### Initial commit
 - Design the classes and write method stubs, getters, setters, to strings, equals, etc.
 #### Sprint 1
-- This first sprint will include the Meme, BackgroundImage, and Rating classes. Writing constructors, methods and implementing classes.
+- This first sprint will include the implementation of Meme, BackgroundImage, and Rating classes. Writing constructors, methods and implementing classes.
+#### Sprint 2
+- This second sprint will include the implementation of Feed and User classes and adjustments to Meme and Rating class. Writing and overloading constructors, writing main methods to test classes.
