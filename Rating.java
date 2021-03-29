@@ -142,7 +142,6 @@ public class Rating {
           System.out.println(r2.equals(r3));
           System.out.println("-------------------------------------------");
           System.out.println(r1.getUser().getUserName());
-          
-      } //END MAIN 
+      } //END MAIN
       
   } //END Class

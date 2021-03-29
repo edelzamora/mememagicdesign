@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.TreeSet;
 
-public class User {
+public class User implements Comparable<User> {
     // STATES (Variables
 
     /**
@@ -14,21 +15,21 @@ public class User {
     private ArrayList<Meme> memesCreated;
 
     /**
-     * ArrayList of memes viewed by the user
+     * Set of memes viewed by the user
      **/
-    private ArrayList<Meme> memesViewed;
+    private TreeSet<Meme> memesViewed;
 
     // Constructors
     public User() {
         this.username = "No user given";
         this.memesCreated = new ArrayList<Meme>();
-        this.memesViewed = new ArrayList<Meme>();
+        this.memesViewed = new TreeSet<Meme>();
     }
     
     public User(String username) {
         this.username = username;
         this.memesCreated = new ArrayList<Meme>();
-        this.memesViewed = new ArrayList<Meme>();
+        this.memesViewed = new TreeSet<Meme>();
     }
 
     // BEHAVIOR (METHOD)
@@ -218,7 +219,11 @@ public class User {
      * @return ArrayList returns a list of memes viewed by User
      */
     public ArrayList<Meme> getMemesViewed(){
-        return this.memesViewed;
+        ArrayList<Meme> memeList = new ArrayList<Meme>();
+        for(Meme meme: this.memesViewed) {
+            memeList.add(meme);
+        }
+        return memeList;
     }
     
     /**
@@ -227,7 +232,24 @@ public class User {
      * @param ArrayList A list of memes to set on the User object
      */
     public void setMemesViewed(ArrayList<Meme> memeList) {
-        this.memesViewed = memeList;
+        TreeSet<Meme> memeSet = new TreeSet<Meme>();
+        for(Meme meme: memeList) {
+            memeSet.add(meme);
+        }
+        this.memesViewed = memeSet;
+    }
+    
+    @Override
+    public int compareTo(User other) {
+        
+        int usernameCompare = this.username.compareTo(other.username);
+        if(usernameCompare != 0) return usernameCompare;
+        
+        int memeCountCompare = other.memesCreated.size() - this.memesCreated.size();
+        if(memeCountCompare != 0) return memeCountCompare;
+        
+        
+        return 0;
     }
     
     public static void main(String[] args) {
@@ -347,8 +369,6 @@ public class User {
         
         for(Meme meme: u1.getMemesCreated()) System.out.println(meme.calculateOverallRating());;
         System.out.println(u1.calculateReputation());
-        for(Meme meme: u1.getMemesCreated()) System.out.println(meme);
-
+        for(Meme meme: u1.getMemesCreated()) System.out.println(meme);        
     } //END MAIN
-    
 } // END class

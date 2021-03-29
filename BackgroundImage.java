@@ -1,5 +1,5 @@
 
-public class BackgroundImage {
+public class BackgroundImage implements Comparable<BackgroundImage>{
     //STATES (Instance variables)
     /**
      * Holds the name of the image
@@ -121,6 +121,22 @@ public class BackgroundImage {
         this.description = description;
     }
     
+    //CompareTo method
+    @Override
+    public int compareTo(BackgroundImage other) {
+        
+        int nameCompare = this.imageFileName.compareTo(other.imageFileName);
+        if(nameCompare != 0) return nameCompare;
+        
+        int titleCompare = this.title.compareTo(other.title);
+        if(titleCompare != 0) return titleCompare;
+        
+        int descriptionCompare = this.description.compareTo(other.description);
+        if(descriptionCompare != 0) return descriptionCompare;
+        
+        return 0;
+    }
+    
     public static void main(String[] args) {
         //TESTING
         
@@ -140,6 +156,7 @@ public class BackgroundImage {
         System.out.println("Does kitten equal brown kitten: " + kitten.equals(brownKitten));
         System.out.println("Does puppy equal brown kitten: " + puppy.equals(brownKitten));
 
+        
     } //END MAIN
     
 } // END class

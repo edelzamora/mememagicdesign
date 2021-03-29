@@ -1,5 +1,5 @@
 
-public class Meme {
+public class Meme implements Comparable<Meme> {
     // STATES (Variables
    
        /**
@@ -283,6 +283,28 @@ public class Meme {
            this.shared = shared;
        }
        
+       //CompareTO method
+       @Override
+       public int compareTo(Meme other) {
+           
+           int captionCompare = this.caption.compareTo(other.caption);
+           if(captionCompare != 0) return captionCompare;
+           
+           int bgImageCompare = this.backgroundImage.compareTo(other.backgroundImage);
+           if(bgImageCompare != 0) return bgImageCompare;
+           
+           int ratingCompare = (int) (other.calculateOverallRating() - this.calculateOverallRating());
+           if(ratingCompare != 0) return ratingCompare;
+           
+           if(this.shared && other.shared == false) {
+               return -1;
+           } else if (this.shared == false && other.shared) {
+               return 1;
+           }
+           
+           return 0;
+       }
+       
        public static void main(String[] args) {
            //TESTING
            
@@ -365,6 +387,8 @@ public class Meme {
            System.out.println(funnyChicken.toString());
            System.out.println(funnyChicken.calculateOverallRating());
            
+           
        } //END MAIN
-
+       
    } //END CLASS
+   
