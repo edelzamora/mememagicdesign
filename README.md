@@ -17,3 +17,5 @@ To get started with your app, you're going to need to design some classes. You s
 - This first sprint will include the implementation of Meme, BackgroundImage, and Rating classes. Writing constructors, methods and implementing classes.
 #### Sprint 2
 - This second sprint will include the implementation of Feed and User classes and adjustments to Meme and Rating class. Writing and overloading constructors, writing main methods to test classes.
+#### Feature Add 1
+- Adding the first features to the project. This features adds the function of sorting through memes in the user's feed and they are able to sort by rating or creator. This feature was achieved by using the Comparable and Comparator to the methods.
