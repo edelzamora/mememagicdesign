@@ -1,3 +1,4 @@
+package src;
 
 public class Meme implements Comparable<Meme> {
     // STATES (Variables

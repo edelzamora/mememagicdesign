@@ -1,3 +1,4 @@
+package src;
 
 public class Rating {
     //STATES (Instance variables)

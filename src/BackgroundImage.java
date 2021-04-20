@@ -1,3 +1,4 @@
+package src;
 
 public class BackgroundImage implements Comparable<BackgroundImage>{
     //STATES (Instance variables)

@@ -1,8 +1,17 @@
+package JUnit;
+
 import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+
 import org.junit.Before;
 import org.junit.Test;
+
+import src.BackgroundImage;
+import src.Feed;
+import src.Meme;
+import src.User;
 
 public class UserTest {
     //Feed Objetcs
