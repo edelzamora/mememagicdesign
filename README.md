@@ -19,3 +19,5 @@ To get started with your app, you're going to need to design some classes. You s
 - This second sprint will include the implementation of Feed and User classes and adjustments to Meme and Rating class. Writing and overloading constructors, writing main methods to test classes.
 #### Feature Add 1
 - Adding the first features to the project. This features adds the function of sorting through memes in the user's feed and they are able to sort by rating or creator. This feature was achieved by using the Comparable and Comparator to the methods.
+#### JUnit Testing
+- Testing all classes and each method with JUnit 4 and removing the main method testing from each class. Making sure every method is working correctly and have a JUnit coverage above 90%.
