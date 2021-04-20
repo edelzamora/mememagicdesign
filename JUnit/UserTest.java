@@ -1,10 +1,8 @@
 package JUnit;
 
 import static org.junit.Assert.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -203,5 +201,4 @@ public class UserTest {
         
         assertEquals(-18, bob123.compareTo(tina));
     }
-
 }

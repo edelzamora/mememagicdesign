@@ -102,7 +102,7 @@ public class Meme implements Comparable<Meme> {
         * 
         * @return int The number of positive ones
         */
-       private int getPostiveOnes() {
+       protected int getPostiveOnes() {
            Rating[] ratingArray = this.ratings;
            int posOneCount = 0;
            for(int i = 0; i < ratingArray.length; i++) {
@@ -118,7 +118,7 @@ public class Meme implements Comparable<Meme> {
         * 
         * @return int The number of negative ones
         */
-       private int getNegativeOnes() {
+       protected int getNegativeOnes() {
            Rating[] ratingArray = this.ratings;
            int negOneCount = 0;
            for(int i = 0; i < ratingArray.length; i++) {
@@ -305,91 +305,4 @@ public class Meme implements Comparable<Meme> {
            
            return 0;
        }
-       
-       public static void main(String[] args) {
-           //TESTING
-           
-           //Creating background image objects
-           BackgroundImage chicken = new BackgroundImage("chicken.png", "Funny chicken", "Image of a chicken with a tiny helmet on its head"); //Given params
-           BackgroundImage kitten = new BackgroundImage("kitten.png", "Sleeping kitten", "Image of a kitten sleeping on their little bed"); //Empty || No params
-           BackgroundImage puppy = new BackgroundImage("puppy.png", "Sleeping puppy", "Image of a puppy sleeping on their little bed");
-           BackgroundImage duck = new BackgroundImage("duck.png", "Duck chasing squirrel", "Image of a duck chasing a squirrel in the park");
-           
-           //Creating user objects
-           User bob123 = new User("bob123");
-           User tinaaa = new User("tinaaa");
-           User johnTho = new User("johnTho");
-           
-           //Creating meme objects
-           Meme funnyChicken = new Meme(chicken, "Safety first", bob123);
-           Meme sleepyPuppy = new Meme(puppy, "Look at the puppy", tinaaa);
-           Meme sleepyKitten = new Meme(kitten, "Look at the kitten", johnTho);
-           Meme secondChicken = new Meme(chicken, "Safety first", bob123);
-           Meme funnyDuck = new Meme(duck, "RUN squirrel RUN", johnTho);
-           
-           // Creating rating objects 
-           Rating tinaRating = new Rating(tinaaa, 1);
-           Rating bobRating = new Rating(bob123, -1);
-           Rating tinaTwoRating = new Rating(tinaaa, 1);
-           Rating johnRating = new Rating(johnTho, 5);//Not in the allowed values 
-           
-           //Changing alignments
-           System.out.println("-------------------------------------------");
-           System.out.println(sleepyPuppy.getCaptionVerticalAlign()); //Getting alignment
-           
-           System.out.println(funnyDuck.getCaptionVerticalAlign());
-           System.out.println(funnyDuck.setCaptionVerticalAlign("top")); //Passing an allowed position
-           System.out.println(funnyDuck.getCaptionVerticalAlign());
-           
-           System.out.println(sleepyKitten.getCaptionVerticalAlign());
-           System.out.println(sleepyKitten.setCaptionVerticalAlign("left")); //Passing not allowed position
-           System.out.println(sleepyKitten.getCaptionVerticalAlign());
-           
-           
-           //PRINTING
-           // to string and equals for Meme objects
-           System.out.println("-------------------------------------------");
-           
-           System.out.println(funnyChicken.toString());
-           System.out.println(sleepyPuppy.toString());
-           System.out.println(sleepyKitten.toString());
-           System.out.println(secondChicken.toString());
-           
-           System.out.println(funnyChicken.equals(sleepyPuppy));
-           System.out.println(funnyChicken.equals(secondChicken));
-           System.out.println(sleepyKitten.equals(funnyDuck));
-           
-           //To string for the rating object
-           System.out.println("-------------------------------------------");
-           System.out.println("To string: '" + johnRating.toString() + "' and Score: " + johnRating.getScore());
-           System.out.println("To string: '" + tinaTwoRating.toString() + "' and Score: " + tinaTwoRating.getScore());
-           System.out.println("-------------------------------------------");
-           
-           //Add rating and calculating overall score
-           for(Rating value : funnyChicken.getRatings()) System.out.println(value);
-           System.out.println("-------------------------------------------");
-           funnyChicken.addRating(johnRating); //Pushed out of array
-           funnyChicken.addRating(johnRating); //Pushed out of array
-           funnyChicken.addRating(tinaRating); //1th in array
-           funnyChicken.addRating(tinaRating); //2th in array
-           funnyChicken.addRating(tinaRating); //3th in array
-           funnyChicken.addRating(tinaRating); //4th in array
-           funnyChicken.addRating(tinaRating); //5th in array
-           funnyChicken.addRating(tinaRating); //6th in array
-           funnyChicken.addRating(tinaRating); //6th in array
-           funnyChicken.addRating(tinaRating); //7th in array
-           funnyChicken.addRating(bobRating);  //8th in array
-           funnyChicken.addRating(tinaRating); //9th in array
-           funnyChicken.addRating(tinaRating); //10th in array
-           for(Rating value : funnyChicken.getRatings()) System.out.println(value);
-           System.out.println("-------------------------------------------");
-           
-           
-           System.out.println(funnyChicken.toString());
-           System.out.println(funnyChicken.calculateOverallRating());
-           
-           
-       } //END MAIN
-       
    } //END CLASS
-   

@@ -66,5 +66,4 @@ public class Feed {
     public void setMemes(ArrayList<Meme> memes) {
         this.memes = memes;
     }
-    
 } //END CLASS

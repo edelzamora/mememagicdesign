@@ -250,7 +250,6 @@ public class User implements Comparable<User> {
         int memeCountCompare = other.memesCreated.size() - this.memesCreated.size();
         if(memeCountCompare != 0) return memeCountCompare;
         
-        
         return 0;
     }
 } // END class
