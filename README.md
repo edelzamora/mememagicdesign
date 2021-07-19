@@ -1,6 +1,6 @@
 ## 💡 About
 
-This is an ongoing individual project for the class "Software Development Methods" during the Spring Semester of 2021 at University.
+This is an individual project for the class "Software Development Methods" during the Spring Semester of 2021 at University.
 
 ![Java](https://img.shields.io/badge/-Java-blue)
 
